@@ -18,13 +18,13 @@ func init() {
 
 func main()  {
 	flag.Parse()
-	quiz()
+	printStats(quiz())
+	os.Exit(0)
 }
 
-func quiz(){
-	var score int = 0
-	var total int = 0
-
+func quiz() (score int , total int){
+	score = 0 
+	total = 0
 	r := csv.NewReader(getReader(file))
 	record, err := r.Read()
 	for record != nil {
@@ -37,8 +37,7 @@ func quiz(){
 		}
 		record, err = r.Read()
 	}
-	printStats(score, total)
-	os.Exit(0)
+	return score, total
 }
 
 func query(exp string, solution string) (isCorrect bool) {
