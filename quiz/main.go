@@ -23,8 +23,6 @@ func main()  {
 }
 
 func quiz() (score int , total int){
-	score = 0 
-	total = 0
 	r := csv.NewReader(getReader(file))
 	record, err := r.Read()
 	for record != nil {
