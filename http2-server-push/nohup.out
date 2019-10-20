@@ -1,0 +1,31 @@
+2019/10/15 19:31:33 Serving on https://0.0.0.0:8000
+2019/10/15 19:31:56 Serving on https://0.0.0.0:8000
+2019/10/15 19:31:56 listen tcp :8000: bind: address already in use
+exit status 1
+2019/10/15 19:31:56 http: TLS handshake error from [::1]:60777: remote error: tls: bad certificate
+2019/10/15 19:33:42 Serving on https://0.0.0.0:8000
+2019/10/15 19:33:42 listen tcp :8000: bind: address already in use
+exit status 1
+2019/10/15 19:33:42 http: TLS handshake error from [::1]:60792: remote error: tls: bad certificate
+2019/10/15 19:34:12 http: TLS handshake error from [::1]:60819: remote error: tls: unknown certificate
+2019/10/15 19:34:12 http: TLS handshake error from [::1]:60820: remote error: tls: unknown certificate
+2019/10/15 19:34:13 http: TLS handshake error from [::1]:60824: remote error: tls: unknown certificate
+2019/10/15 19:34:13 http: TLS handshake error from [::1]:60823: remote error: tls: unknown certificate
+2019/10/15 19:34:21 http: TLS handshake error from [::1]:60826: remote error: tls: unknown certificate
+2019/10/15 19:34:21 http: TLS handshake error from [::1]:60825: remote error: tls: unknown certificate
+2019/10/15 19:34:24 http: TLS handshake error from [::1]:60821: EOF
+2019/10/15 19:35:08 Serving on https://0.0.0.0:8000
+2019/10/15 19:35:08 Got connection: HTTP/2.0
+2019/10/15 19:40:55 Serving on https://0.0.0.0:8000
+2019/10/15 19:40:55 Got connection: HTTP/2.0
+2019/10/15 19:48:49 Serving on https://0.0.0.0:8000
+2019/10/15 19:48:49 listen tcp :8000: bind: address already in use
+exit status 1
+2019/10/16 00:27:36 Serving on https://0.0.0.0:8000
+2019/10/16 00:27:36 listen tcp :8000: bind: address already in use
+exit status 1
+2019/10/16 00:27:55 Serving on https://0.0.0.0:8000
+2019/10/16 00:27:55 listen tcp :8000: bind: address already in use
+exit status 1
+2019/10/16 00:30:06 Serving on https://0.0.0.0:8000
+2019/10/16 00:30:06 Got connection: HTTP/2.0

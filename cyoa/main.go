@@ -8,10 +8,9 @@ import (
 	"github.com/Efrat19/gophercises/cyoa/router"
 )
 
+func main() {
 
-func main()  {
-
-    r := router.NewRouter()
+	r := router.NewRouter()
 
 	fmt.Println("server is listening on port 8080")
 	err := http.ListenAndServe(":8080", r)
@@ -19,7 +18,3 @@ func main()  {
 		panic(err)
 	}
 }
-
-
-
-

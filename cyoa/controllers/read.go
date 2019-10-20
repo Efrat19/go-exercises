@@ -2,13 +2,13 @@ package controllers
 
 import (
 	// "html/template"
-	"net/http"
-	"net/url"
 	"encoding/json"
-	"io/ioutil"
-	"strings"
 	"fmt"
 	"html/template"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
 )
 
 var story map[string]Chapter
@@ -32,11 +32,11 @@ func Read(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			fmt.Println(err)
 		}
-	    redirection := struct {
-			Ref string
+		redirection := struct {
+			Ref  string
 			Text string
 		}{
-			Ref: "/",
+			Ref:  "/",
 			Text: "Go home",
 		}
 		w.Header().Set("Content-Type", "text/html")
@@ -46,7 +46,7 @@ func Read(w http.ResponseWriter, r *http.Request) {
 
 func getChapter(u *url.URL) string {
 	path := u.RequestURI()
-	parts := strings.Split(path,"/") 
+	parts := strings.Split(path, "/")
 	return parts[len(parts)-1]
 }
 
@@ -59,8 +59,7 @@ type Chapter struct {
 	} `json:"options"`
 }
 
-
-func getMap() map [string]Chapter {
+func getMap() map[string]Chapter {
 	storyMap := make(map[string]Chapter)
 	story, err := ioutil.ReadFile("resources/story.json")
 	if err != nil {

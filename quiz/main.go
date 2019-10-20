@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"bufio"
 	"encoding/csv"
 	"flag"
+	"fmt"
+	"os"
 	"time"
 )
 
@@ -17,23 +17,23 @@ func init() {
 	flag.StringVar(&file, "file", "./problems.csv", "file path")
 }
 
-func main()  {
+func main() {
 	flag.Parse()
 	printStats(quiz())
 	os.Exit(0)
 }
 
-func quiz() (score int , total int){
+func quiz() (score int, total int) {
 	r := csv.NewReader(getReader(file))
 	record, err := r.Read()
 	for record != nil {
 		if err != nil {
 			exitWithError(err.Error(), 1)
 		}
-		total ++
+		total++
 		fmt.Println(record[0])
 		if query(record[1]) {
-			score ++
+			score++
 		}
 		record, err = r.Read()
 	}
@@ -42,12 +42,12 @@ func quiz() (score int , total int){
 
 func query(solution string) (isCorrect bool) {
 	channel := make(chan string)
-	go func () {
+	go func() {
 		var input string
 		fmt.Scanln(&input)
-		channel <-input
+		channel <- input
 	}()
-    select{
+	select {
 	case res := <-channel:
 		return res == solution
 	case <-time.After(time.Duration(limit) * time.Second):
@@ -63,7 +63,7 @@ func getReader(path string) *bufio.Reader {
 	return bufio.NewReader(file)
 }
 
-func printStats(score int, total int)  {
+func printStats(score int, total int) {
 	err := fmt.Sprintf("you scored %d out of %d", score, total)
 	if err != "" {
 		exitWithError(err, 1)
